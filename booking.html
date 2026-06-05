@@ -1,0 +1,550 @@
+<!doctype html>
+<html lang="sv">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta
+            name="description"
+            content="Boka bord på Malmö Eld & Deg. Bekräftelse inom 2 timmar. Storgatan 12, Malmö."
+        />
+        <title>Boka bord – Malmö Eld &amp; Deg</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;800&family=Inter:wght@400;500;600;700&display=swap"
+            rel="stylesheet"
+        />
+        <link rel="stylesheet" href="css/style.css" />
+    </head>
+    <body>
+        <a href="#main-content" class="skip-link">Hoppa till innehållet</a>
+
+        <header class="site-header">
+            <div class="container">
+                <a
+                    href="index.html"
+                    class="logo"
+                    aria-label="Malmö Eld &amp; Deg – till startsidan"
+                >
+                    <img
+                        src="img/black-header.png"
+                        alt="Malmö Eld &amp; Deg logotyp"
+                        class="logo__img"
+                    />
+                </a>
+                <button
+                    class="nav-toggle"
+                    aria-controls="main-nav"
+                    aria-expanded="false"
+                    aria-label="Öppna meny"
+                >
+                    <span></span><span></span><span></span>
+                </button>
+                <nav class="site-nav" id="main-nav" aria-label="Huvudmeny">
+                    <a href="index.html">Hem</a>
+                    <a href="menu.html">Meny</a>
+                    <a
+                        href="booking.html"
+                        class="nav-cta btn btn--primary"
+                        aria-current="page"
+                        >Boka bord</a
+                    >
+                </nav>
+            </div>
+        </header>
+
+        <div class="page-banner">
+            <div class="container">
+                <h1 class="page-banner__title">Boka bord</h1>
+                <p class="page-banner__sub">
+                    Bekräftelse inom 2 timmar &nbsp;&middot;&nbsp; Eller ring:
+                    <a href="tel:+46401234567" style="color: var(--fire-light)"
+                        >040&#8209;123 45 67</a
+                    >
+                </p>
+            </div>
+        </div>
+
+        <main id="main-content">
+            <section class="section" aria-labelledby="boka-rubrik">
+                <div class="container">
+                    <!--
+          BOOKING GRID: stacked on mobile, 2 columns at ≥900px.
+          Form column on the left, map and contact info on the right.
+          This split is natural on desktop but unnecessary to maintain
+          on mobile where vertical scrolling is expected.
+        -->
+                    <div class="boka-grid">
+                        <div class="boka-form-col">
+                            <h2 class="section-title" id="boka-rubrik">
+                                Dina uppgifter
+                            </h2>
+                            <span class="section-accent"></span>
+
+                            <div class="booking-form">
+                                <!--
+                novalidate: disables the browser's built-in validation
+                so we can handle errors with JavaScript and provide
+                more consistent visual feedback.
+              -->
+                                <form id="booking-form" novalidate>
+                                    <div class="form-row">
+                                        <div class="form-group">
+                                            <label for="name">Namn</label>
+                                            <input
+                                                type="text"
+                                                id="name"
+                                                name="name"
+                                                placeholder="Ditt namn"
+                                                required
+                                                autocomplete="name"
+                                            />
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="email">E-post</label>
+                                            <input
+                                                type="email"
+                                                id="email"
+                                                name="email"
+                                                placeholder="din@email.se"
+                                                required
+                                                autocomplete="email"
+                                            />
+                                        </div>
+                                    </div>
+
+                                    <div class="form-row">
+                                        <div class="form-group">
+                                            <label for="date">Datum</label>
+                                            <!-- The min attribute is set dynamically by JavaScript to prevent past dates -->
+                                            <input
+                                                type="date"
+                                                id="date"
+                                                name="date"
+                                                required
+                                            />
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="time">Tid</label>
+                                            <select
+                                                id="time"
+                                                name="time"
+                                                required
+                                            >
+                                                <option
+                                                    value=""
+                                                    disabled
+                                                    selected
+                                                >
+                                                    Välj tid
+                                                </option>
+                                                <option>11:30</option>
+                                                <option>12:00</option>
+                                                <option>12:30</option>
+                                                <option>13:00</option>
+                                                <option>17:00</option>
+                                                <option>17:30</option>
+                                                <option>18:00</option>
+                                                <option>18:30</option>
+                                                <option>19:00</option>
+                                                <option>19:30</option>
+                                                <option>20:00</option>
+                                                <option>20:30</option>
+                                            </select>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="guests">Gäster</label>
+                                            <select
+                                                id="guests"
+                                                name="guests"
+                                                required
+                                            >
+                                                <option
+                                                    value=""
+                                                    disabled
+                                                    selected
+                                                >
+                                                    Antal
+                                                </option>
+                                                <option>1</option>
+                                                <option>2</option>
+                                                <option>3</option>
+                                                <option>4</option>
+                                                <option>5</option>
+                                                <option>6</option>
+                                                <option>7 eller fler</option>
+                                            </select>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label for="message"
+                                            >Meddelande
+                                            <span
+                                                style="
+                                                    font-weight: 400;
+                                                    color: var(--text-muted);
+                                                "
+                                                >(valfritt)</span
+                                            ></label
+                                        >
+                                        <textarea
+                                            id="message"
+                                            name="message"
+                                            placeholder="Allergi, födelsedag, högsits eller andra önskemål..."
+                                        ></textarea>
+                                    </div>
+
+                                    <div class="form-submit">
+                                        <button
+                                            type="submit"
+                                            class="btn btn--primary btn--full"
+                                        >
+                                            Skicka bokning
+                                        </button>
+                                    </div>
+                                    <p class="form-note">
+                                        Vi svarar inom 2 timmar
+                                        &nbsp;&middot;&nbsp;
+                                        <a
+                                            href="tel:+46401234567"
+                                            style="color: var(--fire)"
+                                            >040&#8209;123 45 67</a
+                                        >
+                                    </p>
+                                </form>
+
+                                <!--
+                Confirmation message.
+                aria-live="polite" causes screen readers to announce
+                the message when it appears, without interrupting ongoing speech.
+                Hidden with display:none until the form is submitted.
+              -->
+                                <div
+                                    class="form-confirmation"
+                                    id="form-confirmation"
+                                    aria-live="polite"
+                                >
+                                    <div
+                                        class="form-confirmation__icon"
+                                        aria-hidden="true"
+                                    >
+                                        &#10003;
+                                    </div>
+                                    <h3
+                                        style="
+                                            font-family: var(--font-heading);
+                                            font-size: 22px;
+                                            margin-bottom: 8px;
+                                        "
+                                    >
+                                        Tack för din bokning!
+                                    </h3>
+                                    <p
+                                        style="
+                                            color: var(--text-muted);
+                                            font-size: 14px;
+                                        "
+                                    >
+                                        Vi bekräftar inom 2 timmar via e-post.
+                                        Vi ses!
+                                    </p>
+                                    <a
+                                        href="menu.html"
+                                        class="btn btn--primary mt-24"
+                                        >Se vår meny</a
+                                    >
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="boka-info-col">
+                            <h2 class="section-title">Hitta hit</h2>
+                            <span class="section-accent"></span>
+
+                            <!--
+              Map placeholder.
+              In production, replace with a Google Maps embed (<iframe>).
+              role="img" with aria-label gives screen readers context even without a real map.
+            -->
+                            <div
+                                class="map-placeholder"
+                                role="img"
+                                aria-label="Kartplacering för Storgatan 12, Malmö"
+                            >
+                                <svg
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    width="20"
+                                    height="20"
+                                    viewBox="0 0 24 24"
+                                    fill="none"
+                                    stroke="currentColor"
+                                    stroke-width="2"
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                    aria-hidden="true"
+                                >
+                                    <path
+                                        d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0118 0z"
+                                    />
+                                    <circle cx="12" cy="10" r="3" />
+                                </svg>
+                                <span>Storgatan 12, Malmö</span>
+                            </div>
+
+                            <!--
+              Contact list with SVG icons.
+              aria-hidden="true" on icons – they are decorative,
+              the adjacent text conveys the information.
+            -->
+                            <ul class="contact-list">
+                                <li>
+                                    <span class="contact-list__icon"
+                                        ><svg
+                                            xmlns="http://www.w3.org/2000/svg"
+                                            width="20"
+                                            height="20"
+                                            viewBox="0 0 24 24"
+                                            fill="none"
+                                            stroke="currentColor"
+                                            stroke-width="2"
+                                            stroke-linecap="round"
+                                            stroke-linejoin="round"
+                                            aria-hidden="true"
+                                        >
+                                            <path
+                                                d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0118 0z"
+                                            />
+                                            <circle
+                                                cx="12"
+                                                cy="10"
+                                                r="3"
+                                            /></svg
+                                    ></span>
+                                    <div>
+                                        <strong>Adress</strong>
+                                        <span>Storgatan 12, 211 22 Malmö</span>
+                                    </div>
+                                </li>
+                                <li>
+                                    <span class="contact-list__icon"
+                                        ><svg
+                                            xmlns="http://www.w3.org/2000/svg"
+                                            width="20"
+                                            height="20"
+                                            viewBox="0 0 24 24"
+                                            fill="none"
+                                            stroke="currentColor"
+                                            stroke-width="2"
+                                            stroke-linecap="round"
+                                            stroke-linejoin="round"
+                                            aria-hidden="true"
+                                        >
+                                            <path
+                                                d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 10.8 19.79 19.79 0 010 2.18 2 2 0 012 0h3a2 2 0 012 1.72c.13 1.07.37 2.12.71 3.13a2 2 0 01-.45 2.11L6.09 8.14a16 16 0 006.77 6.77l1.18-1.17a2 2 0 012.11-.45c1.01.34 2.06.58 3.13.71A2 2 0 0122 16.92z"
+                                            /></svg
+                                    ></span>
+                                    <div>
+                                        <strong>Telefon</strong>
+                                        <a href="tel:+46401234567"
+                                            >040 – 123 45 67</a
+                                        >
+                                    </div>
+                                </li>
+                                <li>
+                                    <span class="contact-list__icon"
+                                        ><svg
+                                            xmlns="http://www.w3.org/2000/svg"
+                                            width="20"
+                                            height="20"
+                                            viewBox="0 0 24 24"
+                                            fill="none"
+                                            stroke="currentColor"
+                                            stroke-width="2"
+                                            stroke-linecap="round"
+                                            stroke-linejoin="round"
+                                            aria-hidden="true"
+                                        >
+                                            <path
+                                                d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"
+                                            />
+                                            <polyline
+                                                points="22,6 12,13 2,6"
+                                            /></svg
+                                    ></span>
+                                    <div>
+                                        <strong>E-post</strong>
+                                        <a href="mailto:info@malmöelddeg.se"
+                                            >info@malmöelddeg.se</a
+                                        >
+                                    </div>
+                                </li>
+                                <li>
+                                    <span class="contact-list__icon"
+                                        ><svg
+                                            xmlns="http://www.w3.org/2000/svg"
+                                            width="20"
+                                            height="20"
+                                            viewBox="0 0 24 24"
+                                            fill="none"
+                                            stroke="currentColor"
+                                            stroke-width="2"
+                                            stroke-linecap="round"
+                                            stroke-linejoin="round"
+                                            aria-hidden="true"
+                                        >
+                                            <circle cx="12" cy="12" r="10" />
+                                            <polyline
+                                                points="12 6 12 12 16 14"
+                                            /></svg
+                                    ></span>
+                                    <div>
+                                        <strong>Öppettider</strong>
+                                        <span
+                                            >Mån–Tors
+                                            <time datetime="11:00">11:00</time
+                                            >–<time datetime="22:00"
+                                                >22:00</time
+                                            ></span
+                                        >
+                                        <span
+                                            >Fre–Lör
+                                            <time datetime="11:00">11:00</time
+                                            >–<time datetime="23:00"
+                                                >23:00</time
+                                            ></span
+                                        >
+                                        <span
+                                            >Sön
+                                            <time datetime="12:00">12:00</time
+                                            >–<time datetime="21:00"
+                                                >21:00</time
+                                            ></span
+                                        >
+                                    </div>
+                                </li>
+                                <li>
+                                    <span class="contact-list__icon"
+                                        ><svg
+                                            xmlns="http://www.w3.org/2000/svg"
+                                            width="20"
+                                            height="20"
+                                            viewBox="0 0 24 24"
+                                            fill="none"
+                                            stroke="currentColor"
+                                            stroke-width="2"
+                                            stroke-linecap="round"
+                                            stroke-linejoin="round"
+                                            aria-hidden="true"
+                                        >
+                                            <rect
+                                                x="2"
+                                                y="3"
+                                                width="20"
+                                                height="14"
+                                                rx="2"
+                                            />
+                                            <path d="M8 21l1-4h6l1 4" />
+                                            <line
+                                                x1="8"
+                                                y1="10"
+                                                x2="16"
+                                                y2="10"
+                                            /></svg
+                                    ></span>
+                                    <div>
+                                        <strong>Kollektivtrafik</strong>
+                                        <span
+                                            >Buss 2, 5 och 7 – hållplats
+                                            Stortorget (3 min promenad)</span
+                                        >
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <!--
+    FOOTER – three columns at ≥768px, stacked on mobile.
+    Pizza badge used as a decorative element (aria-hidden="true").
+  -->
+        <footer class="site-footer">
+            <div class="container">
+                <div class="footer-grid">
+                    <div class="footer-brand">
+                        <img
+                            src="img/black-badge.png"
+                            alt=""
+                            class="footer-badge"
+                            aria-hidden="true"
+                        />
+                        <p>
+                            Äkta napolitansk pizza tillagad i vedeldad ugn sedan
+                            1997.
+                        </p>
+                        <div class="footer-social mt-16">
+                            <a
+                                href="https://instagram.com"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                class="social-btn"
+                                aria-label="Instagram (öppnar i ny flik)"
+                                >Instagram</a
+                            >
+                            <a
+                                href="https://facebook.com"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                class="social-btn"
+                                aria-label="Facebook (öppnar i ny flik)"
+                                >Facebook</a
+                            >
+                        </div>
+                    </div>
+                    <div class="footer-col">
+                        <h3>Navigering</h3>
+                        <ul>
+                            <li><a href="index.html">Hem</a></li>
+                            <li><a href="menu.html">Meny</a></li>
+                            <li><a href="booking.html">Boka bord</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-col">
+                        <h3>Kontakt</h3>
+                        <ul>
+                            <li>
+                                <a href="tel:+46401234567">040 – 123 45 67</a>
+                            </li>
+                            <li>
+                                <a href="mailto:info@malmöelddeg.se"
+                                    >info@malmöelddeg.se</a
+                                >
+                            </li>
+                            <li>
+                                <a
+                                    href="https://maps.google.com/?q=Storgatan+12+Malmö"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    aria-label="Storgatan 12 – Google Maps öppnas i ny flik"
+                                    >Storgatan 12, Malmö</a
+                                >
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="footer-bottom">
+                    <p>
+                        &copy; 2025 Malmö Eld &amp; Deg. Alla rättigheter
+                        förbehålls.
+                    </p>
+                </div>
+            </div>
+        </footer>
+
+        <script src="js/main.js"></script>
+        <script src="js/booking.js"></script>
+    </body>
+</html>

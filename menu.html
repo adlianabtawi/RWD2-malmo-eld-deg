@@ -1,0 +1,369 @@
+<!doctype html>
+<html lang="sv">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta
+            name="description"
+            content="Vår meny – Malmö Eld & Deg. Klassiker, vegetariska alternativ och drycker. Allt bakat i vedeldad ugn."
+        />
+        <title>Meny – Malmö Eld &amp; Deg</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;800&family=Inter:wght@400;500;600;700&display=swap"
+            rel="stylesheet"
+        />
+        <link rel="stylesheet" href="css/style.css" />
+    </head>
+    <body>
+        <a href="#main-content" class="skip-link">Hoppa till innehållet</a>
+
+        <!--
+    HEADER – identical across all three pages for consistent navigation.
+    aria-current="page" on the active link informs screen readers
+    which page the user is on (WCAG 4.1.2).
+  -->
+        <header class="site-header">
+            <div class="container">
+                <a
+                    href="index.html"
+                    class="logo"
+                    aria-label="Malmö Eld &amp; Deg – till startsidan"
+                >
+                    <img
+                        src="img/black-header.png"
+                        alt="Malmö Eld &amp; Deg logotyp"
+                        class="logo__img"
+                    />
+                </a>
+                <button
+                    class="nav-toggle"
+                    aria-controls="main-nav"
+                    aria-expanded="false"
+                    aria-label="Öppna meny"
+                >
+                    <span></span><span></span><span></span>
+                </button>
+                <nav class="site-nav" id="main-nav" aria-label="Huvudmeny">
+                    <a href="index.html">Hem</a>
+                    <a href="menu.html" aria-current="page">Meny</a>
+                    <a href="booking.html" class="nav-cta btn btn--primary"
+                        >Boka bord</a
+                    >
+                </nav>
+            </div>
+        </header>
+
+        <!--
+    PAGE BANNER
+    Replaces the hero image on subpages – clearly communicates
+    which page the user is on without taking as much
+    vertical space as a full-width hero.
+  -->
+        <div class="page-banner">
+            <div class="container">
+                <h1 class="page-banner__title">Vår meny</h1>
+                <p class="page-banner__sub">
+                    Napolitansk pizza bakad i vedeldad ugn &middot; Ekologiska
+                    råvaror
+                </p>
+            </div>
+        </div>
+
+        <main id="main-content">
+            <!--
+      CLASSICS SECTION
+      aria-labelledby links the section to the heading "klassiker-rubrik",
+      making the landmark readable by screen readers.
+    -->
+            <section class="section" aria-labelledby="klassiker-rubrik">
+                <div class="container">
+                    <h2 class="section-title" id="klassiker-rubrik">
+                        Klassiker
+                    </h2>
+                    <span class="section-accent"></span>
+                    <div class="menu-grid" aria-label="Pizzor">
+                        <article class="menu-card">
+                            <img
+                                src="img/margherita.jpg"
+                                alt="Margherita – tomatsås, fior di latte mozzarella och färsk basilika"
+                                class="menu-card__img"
+                            />
+                            <div class="menu-card__body">
+                                <h3 class="menu-card__name">Margherita</h3>
+                                <p class="menu-card__desc">
+                                    Tomatsås, fior di latte mozzarella, färsk
+                                    basilika, olivolja
+                                </p>
+                                <span class="menu-card__price">135 kr</span>
+                            </div>
+                        </article>
+                        <article class="menu-card">
+                            <img
+                                src="img/diavola.jpg"
+                                alt="Diavola – kryddad nötsalami och mozzarella"
+                                class="menu-card__img"
+                            />
+                            <div class="menu-card__body">
+                                <h3 class="menu-card__name">Diavola</h3>
+                                <p class="menu-card__desc">
+                                    Tomatsås, kryddad nötsalami, mozzarella
+                                </p>
+                                <span class="menu-card__price">155 kr</span>
+                            </div>
+                        </article>
+                        <article class="menu-card">
+                            <img
+                                src="img/bresaola.jpg"
+                                alt="Bresaola – biffbresaola, burrata och körsbärstomat"
+                                class="menu-card__img"
+                            />
+                            <div class="menu-card__body">
+                                <h3 class="menu-card__name">Bresaola</h3>
+                                <p class="menu-card__desc">
+                                    Tomatsås, biffbresaola, burrata,
+                                    körsbärstomat, ruccola
+                                </p>
+                                <span class="menu-card__price">175 kr</span>
+                            </div>
+                        </article>
+                        <article class="menu-card">
+                            <img
+                                src="img/fruttidimare.jpg"
+                                alt="Frutti di mare – räkor, tonfisk och rödlök"
+                                class="menu-card__img"
+                            />
+                            <div class="menu-card__body">
+                                <h3 class="menu-card__name">Frutti di Mare</h3>
+                                <p class="menu-card__desc">
+                                    Tomatsås, räkor, tonfisk, rödlök, mozzarella
+                                </p>
+                                <span class="menu-card__price">175 kr</span>
+                            </div>
+                        </article>
+                        <article class="menu-card">
+                            <img
+                                src="img/verde.jpg"
+                                alt="Verde – tomatsås, paprika, zucchini, mozzarella och ruccola"
+                                class="menu-card__img"
+                            />
+                            <div class="menu-card__body">
+                                <h3 class="menu-card__name">Verde</h3>
+                                <p class="menu-card__desc">
+                                    Tomatsås, paprika, zucchini, mozzarella,
+                                    ruccola
+                                </p>
+                                <span class="menu-card__price">149 kr</span>
+                            </div>
+                        </article>
+                        <article class="menu-card">
+                            <img
+                                src="img/bufalina.jpg"
+                                alt="Bufalina – buffelmozzarella DOP, körsbärstomat och basilika"
+                                class="menu-card__img"
+                            />
+                            <div class="menu-card__body">
+                                <h3 class="menu-card__name">Bufalina</h3>
+                                <p class="menu-card__desc">
+                                    Tomatsås, buffelmozzarella DOP,
+                                    körsbärstomat, basilika
+                                </p>
+                                <span class="menu-card__price">175 kr</span>
+                            </div>
+                        </article>
+                        <article class="menu-card">
+                            <img
+                                src="img/funghi.jpg"
+                                alt="Funghi – tomatsås, champinjoner, mozzarella"
+                                class="menu-card__img"
+                            />
+                            <div class="menu-card__body">
+                                <h3 class="menu-card__name">Funghi</h3>
+                                <p class="menu-card__desc">
+                                    Tomatsås, champinjoner, mozzarella, oregano
+                                </p>
+                                <span class="menu-card__price">149 kr</span>
+                            </div>
+                        </article>
+                    </div>
+                </div>
+            </section>
+
+            <section class="section" aria-labelledby="drycker-rubrik">
+                <div class="container">
+                    <h2 class="section-title" id="drycker-rubrik">Drycker</h2>
+                    <span class="section-accent"></span>
+                    <div class="menu-grid" aria-label="Drycker">
+                        <article class="menu-card">
+                            <img
+                                src="img/juice.jpg"
+                                alt="Färskpressad juice"
+                                class="menu-card__img"
+                            />
+                            <div class="menu-card__body">
+                                <h3 class="menu-card__name">
+                                    Färskpressad juice
+                                </h3>
+                                <p class="menu-card__desc">
+                                    Pressad vid beställning
+                                </p>
+                                <span class="menu-card__price">55 kr</span>
+                            </div>
+                        </article>
+                        <article class="menu-card">
+                            <img
+                                src="img/italiansoda.jpg"
+                                alt="Italiensk läsk"
+                                class="menu-card__img"
+                            />
+                            <div class="menu-card__body">
+                                <h3 class="menu-card__name">Italiensk läsk</h3>
+                                <p class="menu-card__desc">
+                                    Specialitá Siciliana – Tonica Lemon,
+                                    Limonata e Zenzero, Melograno Fiori di
+                                    Sambuco, Ginger Beer eller Gassosa e Menta
+                                </p>
+                                <span class="menu-card__price">39 kr</span>
+                            </div>
+                        </article>
+                        <article class="menu-card">
+                            <img
+                                src="img/coffee.jpg"
+                                alt="Latte art – espresso och cappuccino"
+                                class="menu-card__img"
+                            />
+                            <div class="menu-card__body">
+                                <h3 class="menu-card__name">
+                                    Espresso &amp; kaffe
+                                </h3>
+                                <p class="menu-card__desc">
+                                    Italiensk espresso, cappuccino, americano
+                                </p>
+                                <span class="menu-card__price">35 kr</span>
+                            </div>
+                        </article>
+                        <article class="menu-card">
+                            <img
+                                src="img/te.jpg"
+                                alt="Te"
+                                class="menu-card__img"
+                            />
+                            <div class="menu-card__body">
+                                <h3 class="menu-card__name">Te</h3>
+                                <p class="menu-card__desc">
+                                    Svart te, grönt te eller örtte
+                                </p>
+                                <span class="menu-card__price">35 kr</span>
+                            </div>
+                        </article>
+                    </div>
+                </div>
+            </section>
+
+            <section
+                class="section section--dark"
+                aria-label="Boka bord – uppmaning"
+            >
+                <div class="container" style="text-align: center">
+                    <h2 class="section-title" style="color: var(--dough)">
+                        Sugen? Boka ett bord!
+                    </h2>
+                    <span class="section-accent section-accent--center"></span>
+                    <p
+                        style="
+                            color: #888;
+                            margin-bottom: 28px;
+                            font-size: 15px;
+                        "
+                    >
+                        Vi tar emot bokningar alla dagar. Bekräftelse inom 2
+                        timmar.
+                    </p>
+                    <a href="booking.html" class="btn btn--primary"
+                        >Boka bord nu</a
+                    >
+                </div>
+            </section>
+        </main>
+
+        <!--
+    FOOTER – three columns at ≥768px, stacked on mobile.
+    Pizza badge used as a decorative element (aria-hidden="true").
+  -->
+        <footer class="site-footer">
+            <div class="container">
+                <div class="footer-grid">
+                    <div class="footer-brand">
+                        <img
+                            src="img/black-badge.png"
+                            alt=""
+                            class="footer-badge"
+                            aria-hidden="true"
+                        />
+                        <p>
+                            Äkta napolitansk pizza tillagad i vedeldad ugn sedan
+                            1997.
+                        </p>
+                        <div class="footer-social mt-16">
+                            <a
+                                href="https://instagram.com"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                class="social-btn"
+                                aria-label="Instagram (öppnar i ny flik)"
+                                >Instagram</a
+                            >
+                            <a
+                                href="https://facebook.com"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                class="social-btn"
+                                aria-label="Facebook (öppnar i ny flik)"
+                                >Facebook</a
+                            >
+                        </div>
+                    </div>
+                    <div class="footer-col">
+                        <h3>Navigering</h3>
+                        <ul>
+                            <li><a href="index.html">Hem</a></li>
+                            <li><a href="menu.html">Meny</a></li>
+                            <li><a href="booking.html">Boka bord</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-col">
+                        <h3>Kontakt</h3>
+                        <ul>
+                            <li>
+                                <a href="tel:+46401234567">040 – 123 45 67</a>
+                            </li>
+                            <li>
+                                <a href="mailto:info@malmöelddeg.se"
+                                    >info@malmöelddeg.se</a
+                                >
+                            </li>
+                            <li>
+                                <a
+                                    href="https://maps.google.com/?q=Storgatan+12+Malmö"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    aria-label="Storgatan 12 – Google Maps öppnas i ny flik"
+                                    >Storgatan 12, Malmö</a
+                                >
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="footer-bottom">
+                    <p>
+                        &copy; 2025 Malmö Eld &amp; Deg. Alla rättigheter
+                        förbehålls.
+                    </p>
+                </div>
+            </div>
+        </footer>
+
+        <script src="js/main.js"></script>
+    </body>
+</html>

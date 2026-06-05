@@ -1,0 +1,480 @@
+<!doctype html>
+<html lang="sv">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta
+            name="description"
+            content="Malmö Eld & Deg – äkta napolitansk pizza i vedeldad ugn. Grundad 2024 av Youssef Romano. Öppettider, adress och vår historia."
+        />
+        <title>Malmö Eld &amp; Deg – Välkommen</title>
+
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;800&family=Inter:wght@400;500;600;700&display=swap"
+            rel="stylesheet"
+        />
+
+        <link rel="stylesheet" href="css/style.css" />
+    </head>
+    <body>
+        <!--
+    Skip link (accessibility / distinction requirement)
+    Invisible to mouse users but visible on keyboard focus.
+    Allows keyboard users to skip past the header
+    directly to the main content – WCAG 2.4.1 (A).
+  -->
+        <a href="#main-content" class="skip-link">Hoppa till innehållet</a>
+
+        <header class="site-header">
+            <div class="container">
+                <a
+                    href="index.html"
+                    class="logo"
+                    aria-current="page"
+                    aria-label="Malmö Eld &amp; Deg – till startsidan"
+                >
+                    <img
+                        src="img/black-header.png"
+                        alt="Malmö Eld &amp; Deg logotyp"
+                        class="logo__img"
+                    />
+                </a>
+
+                <!--
+        Hamburger button: shown on mobile only (hidden with CSS at ≥768px).
+        aria-expanded is set dynamically by JavaScript.
+        aria-controls links the button to the nav element with id="main-nav".
+      -->
+                <button
+                    class="nav-toggle"
+                    aria-controls="main-nav"
+                    aria-expanded="false"
+                    aria-label="Öppna meny"
+                >
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+
+                <!--
+        Navigation: three links: Home, Menu, and Book a table (primary CTA).
+        Home link added for users who may not know the logo is clickable.
+        About us and Opening hours are on the home page.
+      -->
+                <nav class="site-nav" id="main-nav" aria-label="Huvudmeny">
+                    <a href="index.html" aria-current="page">Hem</a>
+                    <a href="menu.html">Meny</a>
+                    <a href="booking.html" class="nav-cta btn btn--primary"
+                        >Boka bord</a
+                    >
+                </nav>
+            </div>
+        </header>
+
+        <section class="hero" aria-labelledby="hero-rubrik">
+            <img
+                src="img/hero-restaurang.jpg"
+                alt="Vedeldad pizzaugn i Malmö Eld och Deg"
+                class="hero__img"
+            />
+            <div class="hero__overlay" aria-hidden="true"></div>
+            <div class="hero__content">
+                <div class="container">
+                    <span class="hero__tagline">Malmö &middot; Sedan 1997</span>
+                    <h1 id="hero-rubrik">
+                        Äkta napolitansk<br />pizza i vedeldad ugn
+                    </h1>
+                    <p class="hero__sub">
+                        Vi bakar varje deg för hand och eldar ugnen med
+                        björkved. Välkommen till en riktig pizzaupplevelse i
+                        hjärtat av Malmö.
+                    </p>
+                    <div class="hero__actions">
+                        <a href="menu.html" class="btn btn--primary"
+                            >Se vår meny</a
+                        >
+                        <a href="booking.html" class="btn btn--outline"
+                            >Boka bord</a
+                        >
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!--
+    QUICK ACTIONS: mobile only (display:none at ≥768px via media query)
+    Rationale: the mobile user is often on the move and needs immediate
+    access to phone, map and lunch menu, without scrolling.
+    On tablet and desktop these actions are available via nav and footer.
+    This is an example of content prioritisation rather than pure layout adaptation
+    (Wroblewski 2011; Marcotte 2011).
+  -->
+        <div class="quick-actions" role="region" aria-label="Snabbåtgärder">
+            <div class="container">
+                <div class="quick-actions__grid">
+                    <a
+                        href="tel:+46401234567"
+                        class="quick-btn"
+                        aria-label="Ring och beställ – 040-123 45 67"
+                    >
+                        <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="22"
+                            height="22"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="2"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            aria-hidden="true"
+                        >
+                            <path
+                                d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 10.8 19.79 19.79 0 01.0 2.18 2 2 0 012 0h3a2 2 0 012 1.72c.13 1.07.37 2.12.71 3.13a2 2 0 01-.45 2.11L6.09 8.14a16 16 0 006.77 6.77l1.18-1.17a2 2 0 012.11-.45c1.01.34 2.06.58 3.13.71A2 2 0 0122 16.92z"
+                            />
+                        </svg>
+                        <span>Ring &amp; Beställ</span>
+                    </a>
+
+                    <a
+                        href="https://maps.google.com/?q=Storgatan+12+Malmö"
+                        class="quick-btn"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label="Hitta hit – öppnar Google Maps i ny flik"
+                    >
+                        <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="22"
+                            height="22"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="2"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            aria-hidden="true"
+                        >
+                            <path
+                                d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0118 0z"
+                            />
+                            <circle cx="12" cy="10" r="3" />
+                        </svg>
+                        <span>Hitta hit</span>
+                    </a>
+
+                    <a
+                        href="menu.html"
+                        class="quick-btn quick-btn--red"
+                        aria-label="Se dagens lunch på menysidan"
+                    >
+                        <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="22"
+                            height="22"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="2"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            aria-hidden="true"
+                        >
+                            <line x1="3" y1="6" x2="21" y2="6" />
+                            <line x1="3" y1="12" x2="21" y2="12" />
+                            <line x1="3" y1="18" x2="21" y2="18" />
+                        </svg>
+                        <span>Dagens lunch</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="feature-strip">
+            <div class="container">
+                <div class="feature-strip__grid">
+                    <div class="feature-item">
+                        <span class="feature-item__icon"
+                            ><svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                width="28"
+                                height="28"
+                                viewBox="0 0 24 24"
+                                fill="none"
+                                stroke="currentColor"
+                                stroke-width="1.8"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                                aria-hidden="true"
+                            >
+                                <path
+                                    d="M12 2c0 0-5 4-5 9a5 5 0 0010 0c0-3-2-6-2-6s-1 3-3 3c0-3 0-6 0-6z"
+                                /></svg
+                        ></span>
+                        <div>
+                            <p class="feature-item__title">
+                                Vedeldad ugn sedan 1997
+                            </p>
+                            <p class="feature-item__text">
+                                Autentisk neapolitansk metod
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="feature-item">
+                        <span class="feature-item__icon"
+                            ><svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                width="28"
+                                height="28"
+                                viewBox="0 0 24 24"
+                                fill="none"
+                                stroke="currentColor"
+                                stroke-width="1.8"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                                aria-hidden="true"
+                            >
+                                <path
+                                    d="M12 22c6-6 4-14 4-14s-8 2-12 8c-2 3-1 6 1 8 1 1 5 1 7-2z"
+                                />
+                                <path d="M2 22l10-10" /></svg
+                        ></span>
+                        <div>
+                            <p class="feature-item__title">
+                                Ekologiska råvaror
+                            </p>
+                            <p class="feature-item__text">
+                                Lokala leverantörer i Malmö
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="feature-item">
+                        <span class="feature-item__icon"
+                            ><svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                width="28"
+                                height="28"
+                                viewBox="0 0 24 24"
+                                fill="none"
+                                stroke="currentColor"
+                                stroke-width="1.8"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                                aria-hidden="true"
+                            >
+                                <path
+                                    d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0118 0z"
+                                />
+                                <circle cx="12" cy="10" r="3" /></svg
+                        ></span>
+                        <div>
+                            <p class="feature-item__title">Mitt i Malmö</p>
+                            <p class="feature-item__text">
+                                Storgatan 12 – 5 min från Stortorget
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!--
+    MAIN CONTENT: id="main-content" is the target for the skip link above.
+  -->
+        <main id="main-content">
+            <section
+                class="section section--dark"
+                id="om-oss"
+                aria-labelledby="om-rubrik"
+            >
+                <div class="container">
+                    <div class="about-grid">
+                        <img
+                            src="img/restaurang.jpg"
+                            alt="Pizza dras ut ur vedeldad ugn med öppen eld – hantverket i Malmö Eld och Deg"
+                            class="about-img"
+                        />
+
+                        <div class="about-text">
+                            <h2 class="section-title" id="om-rubrik">
+                                Vår historia
+                            </h2>
+                            <span class="section-accent"></span>
+                            <p>
+                                Malmö Eld &amp; Deg grundades 2024 av Youssef
+                                Romano, uppvuxen i Malmö med en tunisisk far och
+                                en napolitansk mor. Sommrarna tillbringade han i
+                                Neapel där hans morfar lärde honom hantverket –
+                                degen, ugnen, timingen.
+                            </p>
+                            <p>
+                                Efter år som pizzaiolo i Neapel återvände
+                                Youssef till Malmö med en tydlig vision: äkta
+                                napolitansk pizza i vedeldad ugn – utan
+                                kompromisser på hantverket. Vår ugn når 485°C
+                                och bakar varje pizza på under 90 sekunder. Vi
+                                importerar San Marzano-tomater och fior di latte
+                                direkt från Kampanien.
+                            </p>
+                            <p>
+                                Idag driver Youssef restaurangen tillsammans med
+                                sin dotter Yasmin. Morfar Aldos recept, samma
+                                passion – en ny generation som bär det vidare.
+                            </p>
+                            <a href="menu.html" class="btn btn--primary mt-24"
+                                >Se vår meny</a
+                            >
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!--
+      OPENING HOURS SECTION
+      Uses semantic <time> elements with datetime attributes.
+      The datetime format follows ISO 8601 (HH:MM), making times
+      machine-readable for search engines and calendar applications.
+      Table format provides a clear column structure for screen readers.
+    -->
+            <section
+                class="section section--beige"
+                id="oppettider"
+                aria-labelledby="tid-rubrik"
+            >
+                <div class="container">
+                    <h2 class="section-title" id="tid-rubrik">Öppettider</h2>
+                    <span class="section-accent"></span>
+
+                    <table
+                        class="hours-table"
+                        aria-label="Öppettider per veckodag"
+                    >
+                        <tbody>
+                            <tr>
+                                <td>Måndag – Torsdag</td>
+                                <td>
+                                    <time datetime="11:00">11:00</time> –
+                                    <time datetime="22:00">22:00</time>
+                                </td>
+                            </tr>
+                            <tr class="highlight">
+                                <td>Fredag – Lördag</td>
+                                <td>
+                                    <time datetime="11:00">11:00</time> –
+                                    <time datetime="23:00">23:00</time>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Söndag</td>
+                                <td>
+                                    <time datetime="12:00">12:00</time> –
+                                    <time datetime="21:00">21:00</time>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <p class="mt-16 text-muted" style="font-size: 13px">
+                        Storgatan 12, 211 22 Malmö &nbsp;&middot;&nbsp;
+                        <a
+                            href="tel:+46401234567"
+                            style="color: var(--fire); font-weight: 600"
+                            >040 – 123 45 67</a
+                        >
+                    </p>
+                </div>
+            </section>
+        </main>
+
+        <!--
+    FOOTER
+    Three columns at ≥768px, stacked on mobile.
+    Social buttons are <a> elements (not <button>) because they lead
+    to external pages – semantically correct per the HTML specification.
+    rel="noopener noreferrer" prevents external pages
+    from accessing window.opener (security).
+  -->
+        <footer class="site-footer">
+            <div class="container">
+                <div class="footer-grid">
+                    <div class="footer-brand">
+                        <img
+                            src="img/black-badge.png"
+                            alt=""
+                            class="footer-badge"
+                            aria-hidden="true"
+                        />
+                        <p>
+                            Äkta napolitansk pizza tillagad i vedeldad ugn.
+                            Välkommen till oss på Storgatan 12 i Malmö.
+                        </p>
+                        <div class="footer-social mt-16">
+                            <a
+                                href="https://instagram.com"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                class="social-btn"
+                                aria-label="Malmö Eld &amp; Deg på Instagram (öppnar i ny flik)"
+                                >Instagram</a
+                            >
+                            <a
+                                href="https://facebook.com"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                class="social-btn"
+                                aria-label="Malmö Eld &amp; Deg på Facebook (öppnar i ny flik)"
+                                >Facebook</a
+                            >
+                        </div>
+                    </div>
+
+                    <div class="footer-col">
+                        <h3>Navigering</h3>
+                        <ul>
+                            <li><a href="index.html">Hem</a></li>
+                            <li><a href="menu.html">Meny</a></li>
+                            <li><a href="booking.html">Boka bord</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="footer-col">
+                        <h3>Kontakt</h3>
+                        <ul>
+                            <li>
+                                <a href="tel:+46401234567">040 – 123 45 67</a>
+                            </li>
+                            <li>
+                                <a href="mailto:info@malmöelddeg.se"
+                                    >info@malmöelddeg.se</a
+                                >
+                            </li>
+                            <li>
+                                <a
+                                    href="https://maps.google.com/?q=Storgatan+12+Malmö"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    aria-label="Storgatan 12 – öppnar Google Maps i ny flik"
+                                >
+                                    Storgatan 12, Malmö
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="footer-bottom">
+                    <p>
+                        &copy; 2025 Malmö Eld &amp; Deg. Alla rättigheter
+                        förbehålls.
+                    </p>
+                </div>
+            </div>
+        </footer>
+
+        <script src="js/main.js"></script>
+    </body>
+</html>
